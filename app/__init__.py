@@ -3,7 +3,7 @@ from flask_wtf.csrf import CSRFProtect
 
 from app.setting_db import db, migrate
 
-import config, babel
+import config
 
 csrf = CSRFProtect()
 

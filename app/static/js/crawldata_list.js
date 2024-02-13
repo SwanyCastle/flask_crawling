@@ -81,13 +81,13 @@ window.onload = function() {
     // Django의 load_data 함수 실행 -> crawl_data() 실행 후 리턴 값 boolean 값으로 받아서 
     // 크롤링 잘 되었으면 true 반환 하게 했음 그래서 그 값을 json 형식으로 받아 콘솔에 출력, 전달 받은 값이 딱히 사용되는 곳은 없음
     $.ajax({
-      url: "load_data",
+      url: "/update",
       type: "GET",
       success: function(data) {
-        let update_datetime = data.last_update['crawled_datetime'].replace('T', ' ');
-        let split_datetime = update_datetime.split('.');
-        localStorage.setItem("last_update", split_datetime[0]);
-        update_div.innerHTML = split_datetime[0];
+        let update_datetime = data['last_update'];
+
+        localStorage.setItem("last_update", update_datetime);
+        update_div.innerHTML = update_datetime;
       },
       // crawl_data() 함수가 실행 될 동안 button 에 스피너 표현 하고 버튼 사용 할 수 없도록 disable 속성 부여
       beforeSend: function() {
