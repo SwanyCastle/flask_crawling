@@ -5,7 +5,6 @@ from app.models import Data, FirmData
 from datetime import datetime
 
 from app.crawl import crawling_data
-from app.forms import MyForm
 from app.setting_db import db
 
 bp = Blueprint('main', __name__, url_prefix='/')
