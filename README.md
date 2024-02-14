@@ -1,7 +1,8 @@
 # 개발 환경
 - python 3.12.1
 - Flask 3.0.2
-- mysqlclient 2.2.1
+- Werkzeug 3.0.1
+- mysqlclient 2.2.4
 - selenium 4.17.2
 
 # 주요 기능
